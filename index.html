@@ -2,35 +2,117 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>VPN Store</title>
+    <title>Secure VPN</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
-        body{font-family:system-ui;margin:0;background:#f5f5f5}
-        .card{background:#fff;margin:16px;padding:16px;border-radius:12px}
-        .btn{display:block;padding:12px;text-align:center;background:#0088cc;color:#fff;border-radius:10px;text-decoration:none}
-        h1{margin:16px}
+        :root{
+            --bg:#0e0f13;
+            --card:#161822;
+            --text:#e8e9ed;
+            --muted:#9aa0ad;
+            --accent:#4da3ff;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+            background:var(--bg);
+            color:var(--text);
+        }
+        .container{max-width:960px;margin:auto;padding:24px}
+        .hero{
+            padding:32px 0;
+        }
+        .hero h1{font-size:34px;margin:0 0 12px}
+        .hero p{color:var(--muted);max-width:600px}
+        .features{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:16px;
+            margin:32px 0;
+        }
+        .feature{
+            background:var(--card);
+            padding:16px;
+            border-radius:14px;
+        }
+        .pricing{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+            gap:16px;
+        }
+        .plan{
+            background:var(--card);
+            padding:20px;
+            border-radius:16px;
+            border:1px solid #222533;
+        }
+        .plan h3{margin:0 0 8px}
+        .price{font-size:24px;margin:8px 0}
+        .btn{
+            display:block;
+            margin-top:12px;
+            padding:14px;
+            text-align:center;
+            background:var(--accent);
+            color:#fff;
+            border-radius:12px;
+            text-decoration:none;
+            font-weight:600;
+        }
+        .footer{
+            margin-top:40px;
+            color:var(--muted);
+            font-size:14px;
+        }
     </style>
 </head>
 <body>
 
-<h1>VPN тарифы</h1>
+<div class="container">
 
-<div class="card">
-    <h3>1 месяц</h3>
-    <p>Цена: 5 TON</p>
-    <a class="btn" href="product.html?plan=1">Купить</a>
-</div>
+    <section class="hero">
+        <h1>Secure VPN</h1>
+        <p>
+            Быстрый и приватный VPN без логов.
+            Работает в любой стране. Оплата в криптовалюте.
+        </p>
+    </section>
 
-<div class="card">
-    <h3>6 месяцев</h3>
-    <p>Цена: 25 TON</p>
-    <a class="btn" href="product.html?plan=6">Купить</a>
-</div>
+    <section class="features">
+        <div class="feature">🔒 Без логов и трекинга</div>
+        <div class="feature">⚡ Высокая скорость</div>
+        <div class="feature">🌍 50+ стран</div>
+        <div class="feature">📱 Все устройства</div>
+    </section>
 
-<div class="card">
-    <h3>12 месяцев</h3>
-    <p>Цена: 45 TON</p>
-    <a class="btn" href="product.html?plan=12">Купить</a>
+    <section class="pricing">
+        <div class="plan">
+            <h3>1 месяц</h3>
+            <div class="price">5 TON</div>
+            <p class="muted">Для теста сервиса</p>
+            <a class="btn" href="product.html?plan=1">Купить</a>
+        </div>
+
+        <div class="plan">
+            <h3>6 месяцев</h3>
+            <div class="price">25 TON</div>
+            <p class="muted">Оптимальный выбор</p>
+            <a class="btn" href="product.html?plan=6">Купить</a>
+        </div>
+
+        <div class="plan">
+            <h3>12 месяцев</h3>
+            <div class="price">45 TON</div>
+            <p class="muted">Максимальная выгода</p>
+            <a class="btn" href="product.html?plan=12">Купить</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        Оплата и выдача ключей — автоматически
+    </div>
+
 </div>
 
 </body>
