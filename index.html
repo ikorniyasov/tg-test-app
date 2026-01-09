@@ -1,109 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <title>Telegram Mini App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta charset="utf-8">
+    <title>VPN Store</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
-        body {
-            margin: 0;
-            padding: 16px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f5f5f5;
-            color: #111;
-        }
-        .card {
-            max-width: 420px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 14px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-        h1 {
-            margin-top: 0;
-            font-size: 22px;
-        }
-        button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 12px;
-            background: #0088cc;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:active {
-            opacity: 0.85;
-        }
-        .muted {
-            margin-top: 12px;
-            font-size: 14px;
-            color: #666;
-        }
-        code {
-            background: #f0f0f0;
-            padding: 3px 6px;
-            border-radius: 6px;
-            font-size: 13px;
-        }
+        body{font-family:system-ui;margin:0;background:#f5f5f5}
+        .card{background:#fff;margin:16px;padding:16px;border-radius:12px}
+        .btn{display:block;padding:12px;text-align:center;background:#0088cc;color:#fff;border-radius:10px;text-decoration:none}
+        h1{margin:16px}
     </style>
 </head>
 <body>
 
+<h1>VPN тарифы</h1>
+
 <div class="card">
-    <h1>Привет 👋</h1>
-    <p id="user" class="muted">Открыто вне Telegram</p>
-
-    <button id="btn">Нажми меня</button>
-
-    <p class="muted">
-        Это <b>Telegram Mini App</b> в одном HTML-файле.
-    </p>
+    <h3>1 месяц</h3>
+    <p>Цена: 5 TON</p>
+    <a class="btn" href="product.html?plan=1">Купить</a>
 </div>
 
-<!-- Официальный Telegram Mini Apps SDK -->
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<div class="card">
+    <h3>6 месяцев</h3>
+    <p>Цена: 25 TON</p>
+    <a class="btn" href="product.html?plan=6">Купить</a>
+</div>
 
-<script>
-    const tg = window.Telegram?.WebApp;
-
-    const userEl = document.getElementById("user");
-    const btn = document.getElementById("btn");
-
-    if (tg) {
-        // Сообщаем Telegram, что приложение готово
-        tg.ready();
-
-        // Подстраиваем фон под тему Telegram
-        document.body.style.background = tg.themeParams?.bg_color || "#f5f5f5";
-
-        // Получаем пользователя
-        const user = tg.initDataUnsafe?.user;
-        if (user) {
-            userEl.textContent = `Вы: ${user.first_name}` + (user.username ? ` (@${user.username})` : "");
-        } else {
-            userEl.textContent = "Открыто в Telegram";
-        }
-
-        // Действие по кнопке
-        btn.onclick = () => {
-            tg.showPopup({
-                title: "Готово",
-                message: "Кнопка работает внутри Telegram 🎉",
-                buttons: [{ type: "ok" }]
-            });
-        };
-
-    } else {
-        // Открыто в обычном браузере
-        btn.onclick = () => {
-            alert("Это обычный сайт, не Telegram");
-        };
-    }
-</script>
+<div class="card">
+    <h3>12 месяцев</h3>
+    <p>Цена: 45 TON</p>
+    <a class="btn" href="product.html?plan=12">Купить</a>
+</div>
 
 </body>
 </html>
